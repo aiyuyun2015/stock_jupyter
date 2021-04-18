@@ -2,3 +2,5 @@
     remote = storage
 ['remote "storage"']
     url = gdrive://1f57XdbTs8bDz_6Ria9ZFjFSZohdJY7AP
+['remote "dropbox_yq"']
+    url = https://www.dropbox.com/sh/e9buuyxdq5zhuzk/AAC3_SD_5UrGSf-h88df9wnoa?dl=0
