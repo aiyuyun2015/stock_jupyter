@@ -12,4 +12,4 @@ dask[complete]==2021.3.0
 statsmodels==0.12.2
 matplotlib==3.4.1
 sklearn==0.0
-
+quadprog==0.1.8
