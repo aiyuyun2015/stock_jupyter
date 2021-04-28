@@ -40,6 +40,7 @@ class FactorData(pd.DataFrame):
         try:
             s = super().__getitem__(key)
         except KeyError:
+            print(f'loading field {key} from local folder: {self._fHEAD_PATH+"/tmp pkl/"+self._fproduct+"/"+key+"/"+self._fdate}')
             s = load(self._fHEAD_PATH+"/tmp pkl/"+self._fproduct+"/"+key+"/"+self._fdate)
             self[key] = s
         return s
@@ -139,6 +140,7 @@ def construct_composite_signal(dire_signal, range_signal, period_list, good_nigh
     create_signal_path(xx, product, HEAD_PATH)
     parLapply(CORE_NUM, good_night_list, build_composite_signal, 
           signal_list=xx, product=product, HEAD_PATH=HEAD_PATH);
+    
     new_signal = dire_signal+"."+range_signal+"."+str(period)
     good_night_files = np.array([x[-12:] for x in good_night_list])
     all_signal = get_all_signal(good_night_files, product, new_signal, period)
