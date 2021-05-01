@@ -332,6 +332,7 @@ def create_signal_path(signal_list, product, HEAD_PATH):
         print(HEAD_PATH+"/tmp pkl/"+product+"/"+signal_name)
 
 def get_signal_mat(signal_mat, signal_name, product, file_name, HEAD_PATH="d:/intern"):
+    print(f'loading signal: {HEAD_PATH+"/tmp pkl/"+product+"/"+signal_name+"/"+file_name}')
     S = load(HEAD_PATH+"/tmp pkl/"+product+"/"+signal_name+"/"+file_name)
     S[np.isnan(S)] = 0
     if signal_mat is None:
